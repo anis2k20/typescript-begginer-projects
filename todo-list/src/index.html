@@ -14,21 +14,27 @@
     </h1>
 
     <form id="todo-form">
-      <div class="flex gap-4 items-center">
-        <input
+        <div class="flex gap-4 items-center">
+        <label for="todo-input" class="w-full"><input
           type="text"
           placeholder="Enter your todo"
           id="todo-input"
-          class="border rounded-md p-3 flex-1 outline-none focus:ring-1 focus:ring-teal-400 duration-200"
+          class="border w-full rounded-md p-3 flex-1 outline-none focus:ring-1 focus:ring-teal-400 duration-200"
         />
+        </label>
         <button
           type="submit"
-          class="p-3 rounded-md bg-teal-400 text-white font-bold"
+          id="addTodo"
+          class="p-3 flex-shrink-0 rounded-md bg-teal-400 text-white font-bold"
         >
           Add Todo
         </button>
       </div>
     </form>
+    <!-- Todo List  -->
+    <div>
+      <ul id="todo-list" class="space-y-2"></ul>
+    </div>
 
     <script type="module" src="./main.ts" defer></script>
   </body>
