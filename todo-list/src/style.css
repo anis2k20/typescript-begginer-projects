@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+li{
+    @apply bg-white p-4 rounded-md font-medium flex justify-between items-center;
+}
+li button {
+    @apply text-white px-2 py-1 rounded-md;
+}
+
+li button:first-child {
+    @apply bg-green-500;
+}
+li button:last-child {
+    @apply bg-red-500;
+}
+
+li div {
+    @apply flex items-center gap-2;
+}
