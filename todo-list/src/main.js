@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("todo-form");
     const input = document.getElementById("todo-input");
     const listElement = document.getElementById("todo-list");
+    const searchElement = document.getElementById("search-todo");
     let todos = [];
     if (!form || !input) {
         console.error("No Data Found!");
@@ -57,4 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
             listElement.appendChild(listItem);
         });
     }
+    //   search todo
+    searchElement.addEventListener("keyup", (e) => {
+        const target = e.target;
+        if (target) {
+            const searchValue = target.value;
+            const filteredTodos = todos.filter((todo) => todo.title.toString().includes(searchValue));
+            console.log(filteredTodos);
+        }
+    });
 });

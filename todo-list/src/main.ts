@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "todo-input"
   ) as HTMLInputElement | null;
   const listElement = document.getElementById("todo-list") as HTMLUListElement;
+  const searchElement = document.getElementById("search-todo") as HTMLInputElement;
 
   interface Todo {
     id: Number;
@@ -75,7 +76,21 @@ document.addEventListener("DOMContentLoaded", () => {
       listElement.appendChild(listItem)
     })
   }
+
+//   search todo
+  searchElement.addEventListener("keyup",(e)=>{
+   const target = e.target as HTMLInputElement | null;
+   if(target){
+     const searchValue = target.value;
+     const filteredTodos = todos.filter((todo)=> todo.title.toString().includes(searchValue));
+     console.log(filteredTodos);
+   }
+
+  })
 });
+
+
+
 
 
 
