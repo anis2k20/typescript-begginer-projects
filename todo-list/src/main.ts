@@ -83,7 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
    if(target){
      const searchValue = target.value;
      const filteredTodos = todos.filter((todo)=> todo.title.toString().includes(searchValue));
-     console.log(filteredTodos);
+     listElement.innerHTML = filteredTodos.map((todo) =>
+         `<li>${todo.title}
+           <div>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+           </li>`
+     ).join("");
+
    }
 
   })
